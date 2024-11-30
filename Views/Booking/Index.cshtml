@@ -1,7 +1,33 @@
-﻿
-@{
-    ViewData["Title"] = "Index";
-}
+﻿@model IEnumerable<HotelSystem.Models.Booking>
 
-<h1>Index</h1>
-
+<h2>Bookings</h2>
+<a asp-action="Create" class="btn btn-primary">Add New Booking</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Guest Name</th>
+            <th>Room Type</th>
+            <th>Check-In Date</th>
+            <th>Check-Out Date</th>
+            <th>Total Price</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var booking in Model)
+        {
+            <tr>
+                <td>@booking.GuestName</td>
+                <td>@booking.Room?.Type</td>
+                <td>@booking.CheckInDate.ToString("yyyy-MM-dd")</td>
+                <td>@booking.CheckOutDate.ToString("yyyy-MM-dd")</td>
+                <td>@booking.TotalPrice</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@booking.Id" class="btn btn-primary">Edit</a>
+                    <a asp-action="Details" asp-route-id="@booking.Id" class="btn btn-info">Details</a>
+                    <a asp-action="Delete" asp-route-id="@booking.Id" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
