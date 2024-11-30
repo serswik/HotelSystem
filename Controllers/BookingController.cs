@@ -2,6 +2,7 @@
 using HotelSystem.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace HotelSystem.Controllers
 {
@@ -14,9 +15,9 @@ namespace HotelSystem.Controllers
             _context = context;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            var bookings = _context.Bookings.ToList();
+            var bookings = await _context.Bookings.Include(b => b.Room).ToListAsync();
             return View(bookings);
         }
 

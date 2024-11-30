@@ -11,13 +11,19 @@ namespace HotelSystem.Data
         public DbSet<Room> Rooms {  get; set; }
         public DbSet<Booking> Bookings { get; set; }
 
-        /* Filling up database info
-         * protected override void OnModelCreating(ModelBuilder modelBuilder)
+        
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Room>().HasData(
-                )
-        }
-        */ 
+            modelBuilder.Entity<Room>()
+                .HasOne(r => r.Hotel)
+                .WithMany(h => h.Rooms)
+                .HasForeignKey(r => r.HotelId);
+
+            modelBuilder.Entity<Booking>()
+                .HasOne(b => b.Room)
+                .WithMany()
+                .HasForeignKey(b => b.RoomId);
+        } 
     }
 
 }
