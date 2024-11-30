@@ -1,83 +1,41 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using HotelSystem.Data;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using HotelSystem.Models;
 
 namespace HotelSystem.Controllers
 {
     public class RoomController : Controller
     {
-        // GET: RoomController
-        public ActionResult Index()
+        public readonly HotelDbContext _context;
+
+        public RoomController(HotelDbContext context)
+        {
+            _context = context;
+        }
+
+        public IActionResult Index()
+        {
+            var rooms = _context.Rooms.ToList();
+            return View(rooms);
+        }
+
+        public IActionResult Create()
         {
             return View();
         }
 
-        // GET: RoomController/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
-        // GET: RoomController/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: RoomController/Create
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public IActionResult Create(Room room)
         {
-            try
+            if(ModelState.IsValid)
             {
-                return RedirectToAction(nameof(Index));
+                _context.Rooms.Add(room);
+                _context.SaveChanges();
+                return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+            return View(room);
         }
 
-        // GET: RoomController/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: RoomController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: RoomController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: RoomController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
     }
 }
