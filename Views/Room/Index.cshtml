@@ -19,7 +19,7 @@
                 <td>@room.Type</td>
                 <td>@room.Price</td>
                 <td>@room.IsAvailable</td>
-                <td>@room.Hotel?.Name</td> <!-- Убедитесь, что данные отеля загружены -->
+                <td>@room.Hotel?.Name</td>
                 <td>
                     <a asp-action="Edit" asp-route-id="@room.Id" class="btn btn-primary">Edit</a>
                     <a asp-action="Details" asp-route-id="@room.Id" class="btn btn-info">Details</a>

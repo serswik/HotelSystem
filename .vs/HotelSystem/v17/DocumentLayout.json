@@ -3,32 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\serge\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\Studying\\HotelSystem\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1FAA9369-CB29-4158-94CA-684421173EFA}|HotelSystem.csproj|c:\\users\\serge\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\studying\\hotelsystem\\views\\booking\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1FAA9369-CB29-4158-94CA-684421173EFA}|HotelSystem.csproj|solutionrelative:views\\booking\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{1FAA9369-CB29-4158-94CA-684421173EFA}|HotelSystem.csproj|c:\\users\\serge\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\studying\\hotelsystem\\data\\hoteldbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1FAA9369-CB29-4158-94CA-684421173EFA}|HotelSystem.csproj|solutionrelative:data\\hoteldbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1FAA9369-CB29-4158-94CA-684421173EFA}|HotelSystem.csproj|c:\\users\\serge\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\studying\\hotelsystem\\views\\room\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1FAA9369-CB29-4158-94CA-684421173EFA}|HotelSystem.csproj|solutionrelative:views\\room\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{1FAA9369-CB29-4158-94CA-684421173EFA}|HotelSystem.csproj|c:\\users\\serge\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\studying\\hotelsystem\\models\\hotel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1FAA9369-CB29-4158-94CA-684421173EFA}|HotelSystem.csproj|solutionrelative:models\\hotel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1FAA9369-CB29-4158-94CA-684421173EFA}|HotelSystem.csproj|c:\\users\\serge\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\studying\\hotelsystem\\views\\hotel\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1FAA9369-CB29-4158-94CA-684421173EFA}|HotelSystem.csproj|solutionrelative:views\\hotel\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{1FAA9369-CB29-4158-94CA-684421173EFA}|HotelSystem.csproj|c:\\users\\serge\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\studying\\hotelsystem\\models\\room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1FAA9369-CB29-4158-94CA-684421173EFA}|HotelSystem.csproj|solutionrelative:models\\room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1FAA9369-CB29-4158-94CA-684421173EFA}|HotelSystem.csproj|c:\\users\\serge\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\studying\\hotelsystem\\views\\hotel\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1FAA9369-CB29-4158-94CA-684421173EFA}|HotelSystem.csproj|solutionrelative:views\\hotel\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1FAA9369-CB29-4158-94CA-684421173EFA}|HotelSystem.csproj|c:\\users\\serge\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\studying\\hotelsystem\\views\\room\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1FAA9369-CB29-4158-94CA-684421173EFA}|HotelSystem.csproj|solutionrelative:views\\room\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1FAA9369-CB29-4158-94CA-684421173EFA}|HotelSystem.csproj|c:\\users\\serge\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\studying\\hotelsystem\\controllers\\hotelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1FAA9369-CB29-4158-94CA-684421173EFA}|HotelSystem.csproj|solutionrelative:controllers\\hotelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1FAA9369-CB29-4158-94CA-684421173EFA}|HotelSystem.csproj|c:\\users\\serge\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\studying\\hotelsystem\\views\\booking\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1FAA9369-CB29-4158-94CA-684421173EFA}|HotelSystem.csproj|solutionrelative:views\\booking\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{1FAA9369-CB29-4158-94CA-684421173EFA}|HotelSystem.csproj|c:\\users\\serge\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\studying\\hotelsystem\\models\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1FAA9369-CB29-4158-94CA-684421173EFA}|HotelSystem.csproj|solutionrelative:models\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,8 +26,34 @@
       "DocumentGroups": [
         {
           "DockedWidth": 91,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 10,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Hotel.cs",
+              "DocumentMoniker": "C:\\Users\\serge\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\Studying\\HotelSystem\\Models\\Hotel.cs",
+              "RelativeDocumentMoniker": "Models\\Hotel.cs",
+              "ToolTip": "C:\\Users\\serge\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\Studying\\HotelSystem\\Models\\Hotel.cs*",
+              "RelativeToolTip": "Models\\Hotel.cs*",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-04T13:00:45.065Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Room.cs",
+              "DocumentMoniker": "C:\\Users\\serge\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\Studying\\HotelSystem\\Models\\Room.cs",
+              "RelativeDocumentMoniker": "Models\\Room.cs",
+              "ToolTip": "C:\\Users\\serge\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\Studying\\HotelSystem\\Models\\Room.cs*",
+              "RelativeToolTip": "Models\\Room.cs*",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-04T12:59:26.136Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
@@ -70,93 +84,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\serge\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\Studying\\HotelSystem\\Views\\Booking\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Booking\\Index.cshtml",
-              "ToolTip": "C:\\Users\\serge\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\Studying\\HotelSystem\\Views\\Booking\\Index.cshtml*",
-              "RelativeToolTip": "Views\\Booking\\Index.cshtml*",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-30T18:42:01.023Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\serge\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\Studying\\HotelSystem\\Views\\Room\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Room\\Index.cshtml",
-              "ToolTip": "C:\\Users\\serge\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\Studying\\HotelSystem\\Views\\Room\\Index.cshtml*",
-              "RelativeToolTip": "Views\\Room\\Index.cshtml*",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-30T18:41:32.273Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\serge\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\Studying\\HotelSystem\\Views\\Hotel\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Hotel\\Index.cshtml",
-              "ToolTip": "C:\\Users\\serge\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\Studying\\HotelSystem\\Views\\Hotel\\Index.cshtml",
-              "RelativeToolTip": "Views\\Hotel\\Index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-30T18:41:07.65Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "HotelController.cs",
-              "DocumentMoniker": "C:\\Users\\serge\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\Studying\\HotelSystem\\Controllers\\HotelController.cs",
-              "RelativeDocumentMoniker": "Controllers\\HotelController.cs",
-              "ToolTip": "C:\\Users\\serge\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\Studying\\HotelSystem\\Controllers\\HotelController.cs",
-              "RelativeToolTip": "Controllers\\HotelController.cs",
-              "ViewState": "AQIAABUAAAAAAAAAAAAowCMAAAAhAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-30T18:39:55.338Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\serge\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\Studying\\HotelSystem\\Views\\Room\\Create.cshtml",
-              "RelativeDocumentMoniker": "Views\\Room\\Create.cshtml",
-              "ToolTip": "C:\\Users\\serge\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\Studying\\HotelSystem\\Views\\Room\\Create.cshtml",
-              "RelativeToolTip": "Views\\Room\\Create.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAaAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-30T18:37:18.895Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\serge\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\Studying\\HotelSystem\\Views\\Hotel\\Create.cshtml",
-              "RelativeDocumentMoniker": "Views\\Hotel\\Create.cshtml",
-              "ToolTip": "C:\\Users\\serge\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\Studying\\HotelSystem\\Views\\Hotel\\Create.cshtml",
-              "RelativeToolTip": "Views\\Hotel\\Create.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-30T18:36:59.031Z",
+              "Title": "Booking.cs",
+              "DocumentMoniker": "C:\\Users\\serge\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\Studying\\HotelSystem\\Models\\Booking.cs",
+              "RelativeDocumentMoniker": "Models\\Booking.cs",
+              "ToolTip": "C:\\Users\\serge\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\Studying\\HotelSystem\\Models\\Booking.cs*",
+              "RelativeToolTip": "Models\\Booking.cs*",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-04T12:49:46.488Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\serge\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\Studying\\HotelSystem\\Views\\Booking\\Create.cshtml",
-              "RelativeDocumentMoniker": "Views\\Booking\\Create.cshtml",
-              "ToolTip": "C:\\Users\\serge\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\Studying\\HotelSystem\\Views\\Booking\\Create.cshtml",
-              "RelativeToolTip": "Views\\Booking\\Create.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAaAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-30T18:37:29.872Z",
+              "DocumentIndex": 0,
+              "Title": "HotelDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\serge\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\Studying\\HotelSystem\\Data\\HotelDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\HotelDbContext.cs",
+              "ToolTip": "C:\\Users\\serge\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\Studying\\HotelSystem\\Data\\HotelDbContext.cs",
+              "RelativeToolTip": "Data\\HotelDbContext.cs",
+              "ViewState": "AQIAAC4AAAAAAAAAAAAcwD8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-04T12:25:10.212Z",
               "EditorCaption": ""
             }
           ]
