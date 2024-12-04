@@ -28,10 +28,16 @@ namespace HotelSystem.Controllers
         // POST: Hotels/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Name,Address")] Hotel hotel)
+        public async Task<IActionResult> Create([Bind("Name,Address, Description")] Hotel hotel)
         {
             if (ModelState.IsValid)
             {
+                
+                if (string.IsNullOrEmpty(hotel.Description))
+                {
+                    hotel.Description = null;
+                }
+
                 _context.Add(hotel);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
