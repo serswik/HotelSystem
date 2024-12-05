@@ -102,5 +102,37 @@ namespace HotelSystem.Controllers
         {
             return _context.Hotels.Any(e => e.Id == id);
         }
+
+        // GET: Hotel/Delete/5
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if(id == null)
+            {
+                return NotFound();
+            }
+
+            var hotel = await _context.Hotels
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if(hotel == null)
+            {
+                return NotFound();
+            }
+
+            return View(hotel);
+        }
+
+        // POST: Hotel/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var hotel = await _context.Hotels.FindAsync(id);
+            if(hotel != null)
+            {
+                _context.Hotels.Remove(hotel);
+                await _context.SaveChangesAsync();
+            }
+            return RedirectToAction(nameof(Index));
+        }
     }
 }
