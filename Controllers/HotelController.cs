@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using HotelSystem.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace HotelSystem.Controllers
 {
@@ -20,6 +21,7 @@ namespace HotelSystem.Controllers
             return View(hotels);
         }
 
+        // GET: Hotel/Create
         public IActionResult Create() 
         {
             return View();
@@ -45,6 +47,60 @@ namespace HotelSystem.Controllers
             return View(hotel);
         }
 
+        // GET: Hotel/Edit/5
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if( id == null)
+            {
+                return NotFound();
+            }
 
+            var hotel = await _context.Hotels.FindAsync(id);
+            if(hotel == null)
+            {
+                return NotFound();
+            }
+
+            return View(hotel);
+        }
+
+        // POST: Hotel/Edit/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Address,Description")] Hotel hotel)
+        {
+            if(id != hotel.Id)
+            {
+                return NotFound();
+            }
+
+            if(ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(hotel);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if(!HotelExists(hotel.Id))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+
+                return RedirectToAction(nameof(Index));
+            }
+            return View(hotel);
+        }
+
+        private bool HotelExists(int id)
+        {
+            return _context.Hotels.Any(e => e.Id == id);
+        }
     }
 }
