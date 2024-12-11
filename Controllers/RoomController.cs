@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using HotelSystem.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace HotelSystem.Controllers
 {
@@ -21,13 +22,19 @@ namespace HotelSystem.Controllers
             return View(rooms);
         }
 
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
+            ViewBag.Hotels = await _context.Hotels.ToListAsync();
+            ViewBag.RoomTypes = Enum.GetValues(typeof(RoomType))
+                .Cast<RoomType>()
+                .Select(rt => new SelectListItem { Value = rt.ToString(), Text = rt.ToString() })
+                .ToList();
+
             return View();
         }
 
         [HttpPost]
-        public IActionResult Create(Room room)
+        public async Task<IActionResult> Create(Room room)
         {
             if(ModelState.IsValid)
             {
@@ -35,6 +42,12 @@ namespace HotelSystem.Controllers
                 _context.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.Hotels = await _context.Hotels.ToListAsync();
+            ViewBag.RoomTypes = Enum.GetValues(typeof(RoomType))
+                .Cast<RoomType>()
+                .Select(rt => new SelectListItem { Value = rt.ToString(), Text = rt.ToString() })
+                .ToList();
+
             return View(room);
         }
 

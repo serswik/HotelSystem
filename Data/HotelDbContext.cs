@@ -30,9 +30,9 @@ namespace HotelSystem.Data
             );
 
             modelBuilder.Entity<Room>().HasData(
-                new Room { Id = 1, HotelId = 1, Type = "Single", Price = 100.00m, IsAvailable = true, Description = "A cozy single room with a sea view." },
-                new Room { Id = 2, HotelId = 1, Type = "Double", Price = 150.00m, IsAvailable = true, Description = "A spacious double room with a balcony." },
-                new Room { Id = 3, HotelId = 2, Type = "Suite", Price = 250.00m, IsAvailable = true, Description = "A luxurious suite with mountain views." }
+                new Room { Id = 1, HotelId = 1, Type = RoomType.Single, Price = 100.00m, IsAvailable = true, Description = "A cozy single room with a sea view." },
+                new Room { Id = 2, HotelId = 1, Type = RoomType.Double, Price = 150.00m, IsAvailable = true, Description = "A spacious double room with a balcony." },
+                new Room { Id = 3, HotelId = 2, Type = RoomType.Suite, Price = 250.00m, IsAvailable = true, Description = "A luxurious suite with mountain views." }
             );
 
             modelBuilder.Entity<Booking>().HasData(

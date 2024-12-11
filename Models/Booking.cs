@@ -10,6 +10,6 @@
         public DateTime CheckOutDate { get; set; }
         public decimal TotalPrice { get; set; }
 
-        public Room Room { get; set; }
+        public Room? Room { get; set; }
     }
 }
