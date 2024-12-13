@@ -17,17 +17,24 @@ namespace HotelSystem.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var bookings = await _context.Bookings.Include(b => b.Room).ToListAsync();
+            var bookings = await _context.Bookings
+                .Include(b => b.Room)
+                .ThenInclude(r => r.Hotel)
+                .ToListAsync();
+
             return View(bookings);
         }
 
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
+            ViewBag.Rooms = await _context.Rooms.ToListAsync();
             return View();
         }
 
+        // POST: Booking/Create
         [HttpPost]
-        public IActionResult Create(Booking booking)
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(Booking booking)
         {
             if (ModelState.IsValid)
             {
@@ -35,6 +42,7 @@ namespace HotelSystem.Controllers
                 _context.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.Rooms = await _context.Rooms.ToListAsync();
             return View(booking);
         }
     }
