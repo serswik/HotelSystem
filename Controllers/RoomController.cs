@@ -45,7 +45,11 @@ namespace HotelSystem.Controllers
             ViewBag.Hotels = await _context.Hotels.ToListAsync();
             ViewBag.RoomTypes = Enum.GetValues(typeof(RoomType))
                 .Cast<RoomType>()
-                .Select(rt => new SelectListItem { Value = rt.ToString(), Text = rt.ToString() })
+                .Select(rt => new SelectListItem 
+                { 
+                    Value = rt.ToString(), 
+                    Text = rt.ToString() 
+                })
                 .ToList();
 
             return View(room);

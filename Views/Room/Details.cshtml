@@ -1,0 +1,53 @@
+﻿@model HotelSystem.Models.Room
+
+@{
+    ViewData["Title"] = "Room Details";
+}
+
+<h1>Room Details</h1>
+
+<div>
+    <h4>Room</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Hotel
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Hotel?.Name
+        </dd>
+
+        <dt class="col-sm-2">
+            Room Type
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Type
+        </dd>
+
+        <dt class="col-sm-2">
+            Price
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Price.ToString("C")
+        </dd>
+
+        <dt class="col-sm-2">
+            Description
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Description
+        </dd>
+
+        <dt class="col-sm-2">
+            Available
+        </dt>
+        <dd class="col-sm-10">
+            @(Model.IsAvailable ? "Yes" : "No")
+        </dd>
+    </dl>
+</div>
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Edit</a>
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+</div>
