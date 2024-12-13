@@ -1,14 +1,14 @@
 ﻿@model IEnumerable<HotelSystem.Models.Room>
 
 <h2>Rooms</h2>
-<a asp-action="Create" class="btn btn-primary">Add New Room</a>
+<a asp-action="Create" class="btn btn-primary mb-3">Add New Room</a>
 <table class="table">
     <thead>
         <tr>
+            <th>Hotel Name</th>
             <th>Type</th>
             <th>Price</th>
             <th>Is Available</th>
-            <th>Hotel Name</th>
             <th>Actions</th>
         </tr>
     </thead>
@@ -16,14 +16,16 @@
         @foreach (var room in Model)
         {
             <tr>
-                <td>@room.Type</td>
-                <td>@room.Price</td>
-                <td>@room.IsAvailable</td>
                 <td>@room.Hotel?.Name</td>
+                <td>@room.Type</td>
+                <td>@room.Price.ToString("C")</td>
+                <td>@(room.IsAvailable ? "Yes" : "No")</td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@room.Id" class="btn btn-primary">Edit</a>
-                    <a asp-action="Details" asp-route-id="@room.Id" class="btn btn-info">Details</a>
-                    <a asp-action="Delete" asp-route-id="@room.Id" class="btn btn-danger">Delete</a>
+                    <div class="d-flex justify-content-between gap-2">
+                        <a asp-action="Edit" asp-route-id="@room.Id" class="btn btn-warning btn-sm w-100">Edit</a>
+                        <a asp-action="Details" asp-route-id="@room.Id" class="btn btn-info btn-sm w-100">Details</a>
+                        <a asp-action="Delete" asp-route-id="@room.Id" class="btn btn-danger btn-sm w-100">Delete</a>
+                    </div>
                 </td>
             </tr>
         }
