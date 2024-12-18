@@ -93,7 +93,7 @@ namespace HotelSystem.Controllers
                 .Where(r => r.HotelId == booking.Room.HotelId && (r.IsAvailable || r.Id == booking.RoomId))
                 .ToListAsync();
 
-            ViewBag.Rooms = new SelectList(avaliableRooms, "Id", "Type", booking.RoomId);
+            ViewBag.Rooms = avaliableRooms;
 
             return View(booking);
         }
@@ -123,10 +123,15 @@ namespace HotelSystem.Controllers
                             .Include(b => b.Room)
                             .FirstOrDefaultAsync(b => b.Id == booking.Id);
 
-                        if (oldBooking != null && oldBooking.RoomId != booking.RoomId)
+                        if (oldBooking != null)
                         {
-                            oldBooking.Room.IsAvailable = true;
-                            room.IsAvailable = false;
+                            _context.Entry(oldBooking).State = EntityState.Detached;
+
+                            if(oldBooking.RoomId != booking.RoomId)
+                            {
+                                oldBooking.Room.IsAvailable = true;
+                                room.IsAvailable = false;
+                            }
                         }
 
                         _context.Update(booking);

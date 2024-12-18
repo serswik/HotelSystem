@@ -1,0 +1,56 @@
+﻿@model HotelSystem.Models.Booking
+
+@{
+    ViewData["Title"] = "Edit Booking";
+}
+
+<h2>Edit Booking</h2>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="form-group">
+        <label>Hotel</label>
+        <input class="form-control" value="@ViewBag.Hotel.Name" readonly />
+    </div>
+
+    <div class="form-group">
+        <label for="RoomId">Room</label>
+        <select asp-for="RoomId" id="RoomSelect" class="form-control">
+            <option value="">Select a room</option>
+            @foreach (var room in ViewBag.Rooms as IEnumerable<Room>)
+            {
+                <option value="@room.Id" data-price="@room.Price">@room.Type</option>
+            }
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="GuestName">Guest Name</label>
+        <input asp-for="GuestName" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="GuestEmail">Guest Email</label>
+        <input asp-for="GuestEmail" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label for="CheckInDate">Check-In Date</label>
+        <input asp-for="CheckInDate" id="CheckInDate" class="form-control" type="date" />
+    </div>
+    <div class="form-group">
+        <label for="CheckOutDate">Check-Out Date</label>
+        <input asp-for="CheckOutDate" id="CheckOutDate" class="form-control" type="date" />
+    </div>
+
+    <div class="form-group">
+        <label for="TotalPrice">Total Price</label>
+        <input id="TotalPrice" class="form-control" readonly />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="~/js/booking-edit.js"></script>
