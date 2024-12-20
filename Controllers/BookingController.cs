@@ -170,6 +170,16 @@ namespace HotelSystem.Controllers
             return Json(roomSelectList);
         }
 
+        public async Task<IActionResult> GetAvailableRooms(int hotelId)
+        {
+            var avaliableRooms = _context.Rooms
+                .Where(r => r.HotelId == hotelId && r.IsAvailable)
+                .Select(r => new { r.Id, r.Type, r.Price })
+                .ToList();
+
+            return Json(avaliableRooms);
+        }
+
         private bool BookingExists(int id)
         {
             return _context.Bookings.Any(e =>  e.Id == id);
