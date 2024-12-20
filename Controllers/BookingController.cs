@@ -163,7 +163,7 @@ namespace HotelSystem.Controllers
             var roomSelectList = rooms.Select(r => new
             {
                 Value = r.Id.ToString(),
-                Text = $"{r.Type} (${r.Price})",
+                Text = $"{r.Type} ({r.Price} ₴)",
                 Price = r.Price
             }).ToList();
 
