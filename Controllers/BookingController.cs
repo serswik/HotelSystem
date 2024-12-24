@@ -87,13 +87,16 @@ namespace HotelSystem.Controllers
                 return NotFound();
             }
 
-            ViewBag.Hotel = booking.Room.Hotel;
+            ViewBag.RoomPrice = booking.Room.Price;
 
-            var avaliableRooms = await _context.Rooms
-                .Where(r => r.HotelId == booking.Room.HotelId && (r.IsAvailable || r.Id == booking.RoomId))
-                .ToListAsync();
-
-            ViewBag.Rooms = avaliableRooms;
+            ViewBag.Rooms = await _context.Rooms
+                .Where(r => r.HotelId == booking.Room.HotelId &&
+                (r.IsAvailable || booking.RoomId == r.Id))
+                .Select(r => new SelectListItem
+                {
+                    Value = r.Id.ToString(),
+                    Text = $"{r.Type} ({r.Price} ₴)"
+                }).ToListAsync();
 
             return View(booking);
         }
@@ -123,10 +126,10 @@ namespace HotelSystem.Controllers
                             .Include(b => b.Room)
                             .FirstOrDefaultAsync(b => b.Id == booking.Id);
 
-                        if (oldBooking != null)
+                        if(oldBooking != null)
                         {
                             _context.Entry(oldBooking).State = EntityState.Detached;
-
+                            
                             if(oldBooking.RoomId != booking.RoomId)
                             {
                                 oldBooking.Room.IsAvailable = true;
