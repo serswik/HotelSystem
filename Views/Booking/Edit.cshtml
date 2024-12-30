@@ -1,32 +1,23 @@
 ﻿@model HotelSystem.Models.Booking
 
-@{
-    ViewData["Title"] = "Edit Booking";
-}
-
 <h2>Edit Booking</h2>
 
 <form method="post">
-    <input type="hidden" id="BookingId" name="Id" value="@Model.Id" />
-
     <div class="form-group">
         <label for="HotelSelect">Hotel</label>
         <select id="HotelSelect" name="HotelId" class="form-control" disabled>
-            <option value="@Model.Room.Hotel.Id">@Model.Room.Hotel.Name</option>
+            <option value="@Model.Room.HotelId">@Model.Room.Hotel.Name</option>
         </select>
-        <small class="form-text text-muted">Hotel cannot be changed.</small>
     </div>
 
     <div class="form-group">
-        <label for="RoomSelect">Room</label>
-        <select id="RoomSelect" name="RoomId">
-            @foreach (var room in ViewBag.Rooms as List<SelectListItem>)
-            {
-                <option value="@room.Value" data-price="@room.Text.Split('(')[1].Split(')')[0]">
-                    @room.Text
-                </option>
-            }
-        </select>
+        <label for="RoomId">Room</label>
+        @Html.DropDownListFor(
+            model => model.RoomId,
+            new SelectList(ViewBag.Rooms, "Value", "Text", Model.RoomId),
+            "Select a room",
+            new { @class = "form-control" }
+         )
     </div>
 
     <div class="form-group">
@@ -51,10 +42,10 @@
 
     <div class="form-group">
         <label for="TotalPrice">Total Price</label>
-        <input type="text" id="TotalPrice" name="TotalPrice" class="form-control" value="@Model.TotalPrice" readonly />
+        <input type="text" id="TotalPrice" name="TotalPrice" class="form-control" readonly value="@Model.TotalPrice" />
     </div>
 
-    <button type="submit" class="btn btn-primary">Save Changes</button>
+    <button type="submit" class="btn btn-primary">Save</button>
 </form>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

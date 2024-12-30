@@ -47,7 +47,7 @@
 
     <div class="form-group">
         <label for="TotalPrice">Total Price</label>
-        <input type="text" id="TotalPrice" name="TotalPrice" class="form-control" readonly>
+        <input type="text" id="TotalPrice" name="TotalPrice" class="form-control" value="@Model.TotalPrice.ToString("F2")" readonly>
     </div>
 
     <button type="submit" class="btn btn-primary">Create</button>

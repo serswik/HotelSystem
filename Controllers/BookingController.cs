@@ -1,6 +1,5 @@
 ﻿using HotelSystem.Data;
 using HotelSystem.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -87,16 +86,22 @@ namespace HotelSystem.Controllers
                 return NotFound();
             }
 
-            ViewBag.RoomPrice = booking.Room.Price;
+            var hotels = await _context.Hotels.ToListAsync();
+            ViewBag.Hotels = new SelectList(hotels, "Id", "Name", booking.Room.HotelId);
 
-            ViewBag.Rooms = await _context.Rooms
-                .Where(r => r.HotelId == booking.Room.HotelId &&
-                (r.IsAvailable || booking.RoomId == r.Id))
+            var rooms = await _context.Rooms
+                .Where(r => r.HotelId == booking.Room.HotelId
+                && (r.IsAvailable || r.Id == booking.RoomId))
                 .Select(r => new SelectListItem
                 {
                     Value = r.Id.ToString(),
                     Text = $"{r.Type} ({r.Price} ₴)"
                 }).ToListAsync();
+
+            ViewBag.Rooms = rooms;
+
+            var days = (booking.CheckOutDate - booking.CheckInDate).Days;
+            booking.TotalPrice = booking.Room.Price * days;
 
             return View(booking);
         }
@@ -106,55 +111,67 @@ namespace HotelSystem.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,RoomId,GuestName,GuestEmail,CheckInDate,CheckOutDate")] Booking booking)
         {
-            if(id != booking.Id)
+            if (id != booking.Id)
             {
                 return NotFound();
             }
 
-            if(ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                try
-                {
-                    var room = await _context.Rooms.FindAsync(booking.RoomId);
-
-                    if (room != null)
+                var rooms = await _context.Rooms
+                    .Where(r => r.HotelId == booking.Room.HotelId)
+                    .Select(r => new SelectListItem
                     {
-                        var days = (booking.CheckOutDate - booking.CheckInDate).Days;
-                        booking.TotalPrice = room.Price * days;
+                        Value = r.Id.ToString(),
+                        Text = $"{r.Type} ({r.Price} ₴)"
+                    }).ToListAsync();
 
-                        var oldBooking = await _context.Bookings
-                            .Include(b => b.Room)
-                            .FirstOrDefaultAsync(b => b.Id == booking.Id);
+                ViewBag.Rooms = rooms;
 
-                        if(oldBooking != null)
-                        {
-                            _context.Entry(oldBooking).State = EntityState.Detached;
-                            
-                            if(oldBooking.RoomId != booking.RoomId)
-                            {
-                                oldBooking.Room.IsAvailable = true;
-                                room.IsAvailable = false;
-                            }
-                        }
-
-                        _context.Update(booking);
-                        await _context.SaveChangesAsync();
-                    }
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!BookingExists(booking.Id))
-                        return NotFound();
-                    else
-                        throw;
-                }
-                return RedirectToAction(nameof(Index));
+                return View(booking);
             }
 
-            var hotels = await _context.Hotels.ToListAsync();
-            ViewBag.Hotels = new SelectList(hotels, "Id", "Name");
+            try
+            {
+                var selectedRoom = await _context.Rooms.FindAsync(booking.RoomId);
+                if (selectedRoom == null)
+                {
+                    return NotFound();
+                }
 
-            return View(booking);
+                var days = (booking.CheckOutDate - booking.CheckInDate).Days;
+                booking.TotalPrice = selectedRoom.Price * days;
+
+                var existingBooking = await _context.Bookings
+                    .Include(b => b.Room)
+                    .FirstOrDefaultAsync(b => b.Id == booking.Id);
+
+                if (existingBooking != null)
+                {
+                    if (existingBooking.RoomId != booking.RoomId)
+                    {
+                        existingBooking.Room.IsAvailable = true;
+                        selectedRoom.IsAvailable = false;
+                    }
+                    _context.Entry(existingBooking).State = EntityState.Detached;
+                }
+
+                _context.Update(booking);
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!BookingExists(booking.Id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return RedirectToAction(nameof(Index));
         }
 
         public async Task<IActionResult> GetRoomsByHotel(int hotelId)
@@ -171,16 +188,6 @@ namespace HotelSystem.Controllers
             }).ToList();
 
             return Json(roomSelectList);
-        }
-
-        public async Task<IActionResult> GetAvailableRooms(int hotelId)
-        {
-            var avaliableRooms = _context.Rooms
-                .Where(r => r.HotelId == hotelId && r.IsAvailable)
-                .Select(r => new { r.Id, r.Type, r.Price })
-                .ToList();
-
-            return Json(avaliableRooms);
         }
 
         private bool BookingExists(int id)
