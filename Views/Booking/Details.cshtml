@@ -1,0 +1,28 @@
+﻿@model HotelSystem.Models.Booking
+
+<h2>Booking Details</h2>
+
+<div class="card">
+    <div class="card-header">
+        Booking ID: @Model.Id
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">Guest Information</h5>
+        <p><strong>Guest Name:</strong> @Model.GuestName</p>
+        <p><strong>Guest Email:</strong> @Model.GuestEmail</p>
+
+        <h5 class="card-title">Room Details</h5>
+        <p><strong>Hotel:</strong> @Model.Room.Hotel.Name</p>
+        <p><strong>Room Type:</strong> @Model.Room.Type</p>
+        <p><strong>Price per Night</strong> @Model.Room.Price ₴</p>
+
+        <h5 class="card-title">Booking Dates</h5>
+        <p><strong>Check-In Date:</strong> @Model.CheckInDate.ToString("yyyy-MM-dd")</p>
+        <p><strong>Check-Out Date:</strong> @Model.CheckOutDate.ToString("yyyy-MM-dd")</p>
+        <p><strong>Total Price:</strong> @Model.TotalPrice ₴</p>
+    </div>
+    <div class="card-footer">
+        <a href="@Url.Action("Edit", "Booking", new { id = Model.Id })" class="btn btn-primary">Edit</a>
+        <a href="@Url.Action("Index", "Booking")" class="btn btn-secondary">Back to List</a>
+    </div>
+</div>
