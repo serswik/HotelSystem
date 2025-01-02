@@ -1,8 +1,10 @@
-﻿@model HotelSystem.Models.Booking
+﻿<link rel="stylesheet" href="~/css/booking-details.css" />
 
-<h2>Booking Details</h2>
+@model HotelSystem.Models.Booking
 
-<div class="card">
+<h2 class="booking-details">Booking Details</h2>
+
+<div class="card booking-details">
     <div class="card-header">
         Booking ID: @Model.Id
     </div>
@@ -14,7 +16,7 @@
         <h5 class="card-title">Room Details</h5>
         <p><strong>Hotel:</strong> @Model.Room.Hotel.Name</p>
         <p><strong>Room Type:</strong> @Model.Room.Type</p>
-        <p><strong>Price per Night</strong> @Model.Room.Price ₴</p>
+        <p><strong>Price per Night:</strong> @Model.Room.Price ₴</p>
 
         <h5 class="card-title">Booking Dates</h5>
         <p><strong>Check-In Date:</strong> @Model.CheckInDate.ToString("yyyy-MM-dd")</p>
