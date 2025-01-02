@@ -62,9 +62,9 @@
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\serge\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\Studying\\HotelSystem\\Views\\Booking\\Create.cshtml",
               "RelativeDocumentMoniker": "Views\\Booking\\Create.cshtml",
-              "ToolTip": "C:\\Users\\serge\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\Studying\\HotelSystem\\Views\\Booking\\Create.cshtml*",
-              "RelativeToolTip": "Views\\Booking\\Create.cshtml*",
-              "ViewState": "AQIAAB8AAAAAAAAAAAAYwDIAAAAAAAAA",
+              "ToolTip": "C:\\Users\\serge\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\Studying\\HotelSystem\\Views\\Booking\\Create.cshtml",
+              "RelativeToolTip": "Views\\Booking\\Create.cshtml",
+              "ViewState": "AQIAAB8AAAAAAAAAAAAYwCsAAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-12-30T13:33:46.703Z",
               "EditorCaption": ""
@@ -79,8 +79,7 @@
               "RelativeToolTip": "Controllers\\BookingController.cs",
               "ViewState": "AQIAAMEAAAAAAAAAAAAAwNIAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-18T22:50:41.921Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-18T22:50:41.921Z"
             },
             {
               "$type": "Document",
@@ -92,8 +91,7 @@
               "RelativeToolTip": "wwwroot\\js\\booking-edit.js",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-12-20T16:08:48.843Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-20T16:08:48.843Z"
             },
             {
               "$type": "Document",
@@ -105,8 +103,7 @@
               "RelativeToolTip": "Views\\Booking\\Edit.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-18T23:01:50.009Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-18T23:01:50.009Z"
             }
           ]
         },

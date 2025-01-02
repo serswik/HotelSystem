@@ -174,6 +174,27 @@ namespace HotelSystem.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        // GET: Booking/Details/5
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var booking = await _context.Bookings
+                .Include(b => b.Room)
+                .ThenInclude(r => r.Hotel)
+                .FirstOrDefaultAsync(m => m.Id == id);
+
+            if (booking == null)
+            {
+                return NotFound();
+            }
+
+            return View(booking);
+        }
+
         public async Task<IActionResult> GetRoomsByHotel(int hotelId)
         {
             var rooms = await _context.Rooms
