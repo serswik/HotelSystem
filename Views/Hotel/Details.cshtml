@@ -1,0 +1,39 @@
+﻿@model HotelSystem.Models.Hotel
+
+@{
+    ViewData["Title"] = "Hotel Details";
+}
+
+<h2>@Model.Name</h2>
+<p><strong>Address:</strong> @Model.Address</p>
+<p><strong>Description:</strong> @Model.Description</p>
+
+<h3>Available Rooms</h3>
+@if (Model.Rooms != null && Model.Rooms.Any())
+{
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Room Type</th>
+                <th>Price</th>
+                <th>Available</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var room in Model.Rooms)
+            {
+                <tr>
+                    <td>@room.Type</td>
+                    <td>@room.Price</td>
+                    <td>@(room.IsAvailable ? "Yes" : "No")</td>
+                    <td>@room.Description</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No rooms available for this hotel.</p>
+}

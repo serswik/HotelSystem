@@ -4,6 +4,7 @@ using HotelSystem.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HotelSystem.Migrations
 {
     [DbContext(typeof(HotelDbContext))]
-    partial class HotelDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241211140724_UpdateRoomTypeToEnum")]
+    partial class UpdateRoomTypeToEnum
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -135,8 +138,8 @@ namespace HotelSystem.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,0)");
 
-                    b.Property<int?>("Type")
-                        .HasColumnType("int");
+                    b.Property<string>("Type")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -152,7 +155,7 @@ namespace HotelSystem.Migrations
                             HotelId = 1,
                             IsAvailable = true,
                             Price = 100.00m,
-                            Type = 0
+                            Type = "Single"
                         },
                         new
                         {
@@ -161,7 +164,7 @@ namespace HotelSystem.Migrations
                             HotelId = 1,
                             IsAvailable = true,
                             Price = 150.00m,
-                            Type = 1
+                            Type = "Double"
                         },
                         new
                         {
@@ -170,7 +173,7 @@ namespace HotelSystem.Migrations
                             HotelId = 2,
                             IsAvailable = true,
                             Price = 250.00m,
-                            Type = 2
+                            Type = "Suite"
                         });
                 });
 

@@ -1,25 +1,57 @@
 ﻿@model HotelSystem.Models.Booking
 
-<h1>Add Booking</h1>
+@{
+    ViewData["Title"] = "Create Booking";
+}
 
-<form asp-action="Add">
+<h2>Create Booking</h2>
+
+<form method="post">
     <div class="form-group">
-        <label>Guest Name</label>
-        <input asp-for="GuestName" class="form-control" />
-    </div>
-    <div class="form-group">
-        <label>Room</label>
-        <select asp-for="RoomId" class="form-control" asp-items="@(new SelectList(ViewBag.Rooms, "Id", "Type"))">
-            <option value="">Select Room</option>
+        <label for="HotelSelect">Hotel</label>
+        <select id="HotelSelect" name="HotelId" class="form-control">
+            <option value="">Select a hotel</option>
+            @foreach (var hotel in ViewBag.Hotels as List<SelectListItem>)
+            {
+                <option value="@hotel.Value">@hotel.Text</option>
+            }
         </select>
     </div>
+
     <div class="form-group">
-        <label>Check-In Date</label>
-        <input asp-for="CheckInDate" type="date" class="form-control" />
+        <label for="RoomSelect">Room</label>
+        <select id="RoomSelect" name="RoomId" class="form-control">
+            <option value="">Select a room</option>
+        </select>
     </div>
+
     <div class="form-group">
-        <label>Check-Out Date</label>
-        <input asp-for="CheckOutDate" type="date" class="form-control" />
+        <label for="GuestName">Guest Name</label>
+        <input type="text" id="GuestName" name="GuestName" class="form-control">
     </div>
-    <button type="submit" class="btn btn-success">Save</button>
+
+    <div class="form-group">
+        <label for="GuestEmail">Guest Email</label>
+        <input type="email" id="GuestEmail" name="GuestEmail" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label for="CheckInDate">Check-in Date</label>
+        <input type="date" id="CheckInDate" name="CheckInDate" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label for="CheckOutDate">Check-out Date</label>
+        <input type="date" id="CheckOutDate" name="CheckOutDate" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label for="TotalPrice">Total Price</label>
+        <input type="text" id="TotalPrice" name="TotalPrice" class="form-control" readonly>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create</button>
 </form>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="~/js/booking-create.js"></script>

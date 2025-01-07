@@ -4,6 +4,7 @@ using HotelSystem.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HotelSystem.Migrations
 {
     [DbContext(typeof(HotelDbContext))]
-    partial class HotelDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241204130716_InitialCreate")]
+    partial class InitialCreate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -37,9 +40,11 @@ namespace HotelSystem.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("GuestEmail")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("GuestName")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("RoomId")
@@ -86,12 +91,15 @@ namespace HotelSystem.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Address")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Description")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -124,6 +132,7 @@ namespace HotelSystem.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Description")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("HotelId")
@@ -135,8 +144,9 @@ namespace HotelSystem.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,0)");
 
-                    b.Property<int?>("Type")
-                        .HasColumnType("int");
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -152,7 +162,7 @@ namespace HotelSystem.Migrations
                             HotelId = 1,
                             IsAvailable = true,
                             Price = 100.00m,
-                            Type = 0
+                            Type = "Single"
                         },
                         new
                         {
@@ -161,7 +171,7 @@ namespace HotelSystem.Migrations
                             HotelId = 1,
                             IsAvailable = true,
                             Price = 150.00m,
-                            Type = 1
+                            Type = "Double"
                         },
                         new
                         {
@@ -170,7 +180,7 @@ namespace HotelSystem.Migrations
                             HotelId = 2,
                             IsAvailable = true,
                             Price = 250.00m,
-                            Type = 2
+                            Type = "Suite"
                         });
                 });
 

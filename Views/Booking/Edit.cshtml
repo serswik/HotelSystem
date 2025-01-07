@@ -1,0 +1,52 @@
+﻿@model HotelSystem.Models.Booking
+
+<h2>Edit Booking</h2>
+
+<form method="post">
+    <div class="form-group">
+        <label for="HotelSelect">Hotel</label>
+        <select id="HotelSelect" name="HotelId" class="form-control" disabled>
+            <option value="@Model.Room.HotelId">@Model.Room.Hotel.Name</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="RoomId">Room</label>
+        @Html.DropDownListFor(
+            model => model.RoomId,
+            new SelectList(ViewBag.Rooms, "Value", "Text", Model.RoomId),
+            "Select a room",
+            new { @class = "form-control" }
+         )
+    </div>
+
+    <div class="form-group">
+        <label for="GuestName">Guest Name</label>
+        <input type="text" id="GuestName" name="GuestName" class="form-control" value="@Model.GuestName" />
+    </div>
+
+    <div class="form-group">
+        <label for="GuestEmail">Guest Email</label>
+        <input type="email" id="GuestEmail" name="GuestEmail" class="form-control" value="@Model.GuestEmail" />
+    </div>
+
+    <div class="form-group">
+        <label for="CheckInDate">Check-in Date</label>
+        <input type="date" id="CheckInDate" name="CheckInDate" class="form-control" value="@Model.CheckInDate.ToString("yyyy-MM-dd")" />
+    </div>
+
+    <div class="form-group">
+        <label for="CheckOutDate">Check-out Date</label>
+        <input type="date" id="CheckOutDate" name="CheckOutDate" class="form-control" value="@Model.CheckOutDate.ToString("yyyy-MM-dd")" />
+    </div>
+
+    <div class="form-group">
+        <label for="TotalPrice">Total Price</label>
+        <input type="text" id="TotalPrice" name="TotalPrice" class="form-control" readonly value="@Model.TotalPrice" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="~/js/booking-edit.js"></script>
