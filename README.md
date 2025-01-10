@@ -20,12 +20,12 @@ The **Hotel Management System** is a comprehensive solution designed for managin
   - LINQ (for efficient data querying)
   
 - **Frontend**:
-  - HTML, CSS, and JavaScript (or React, if applicable)
+  - HTML, CSS, and JavaScript
 
 - **Database**:
   - SQL Server (with Entity Framework Core for database operations)
   
 - **Tools**:
-  - Visual Studio or Visual Studio Code
+  - Visual Studio
   - SQL Server Management Studio
   - Git for version control
